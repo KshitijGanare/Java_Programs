@@ -9,7 +9,7 @@ public class reverseStringTwo {
 
         String name = scan.next();
 
-        String reversed = new StringBuilder(name).reverse().toString();
+        String reversed = new StringBuffer(name).reverse().toString();
 
         System.out.println(reversed);
 
