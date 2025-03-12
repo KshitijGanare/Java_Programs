@@ -7,6 +7,7 @@ public class reverseStringTwo {
 
         Scanner scan = new Scanner(System.in);
 
+        System.out.println("Enter palindrome String: ");
         String name = scan.next();
 
         String reversed = new StringBuffer(name).reverse().toString();
