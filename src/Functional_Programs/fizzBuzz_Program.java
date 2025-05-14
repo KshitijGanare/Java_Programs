@@ -1,4 +1,4 @@
-package Java_Task_Programs;
+package Functional_Programs;
 
 public class fizzBuzz_Program {
     public static void main(String[] args) {
@@ -11,7 +11,7 @@ public class fizzBuzz_Program {
         (for loop, if else)
 
          */
-
+        // 1st Method
         for (int i = 1; i <= 100; i++){
 
             if ( i%3 == 0 && i%5 == 0 ){
@@ -23,6 +23,25 @@ public class fizzBuzz_Program {
             } else System.out.println(i);
         }
 
+
+        // 2nd Method
+        for (int i = 1; i < 100; i++) {
+            if (i%3 == 0){
+                if (i%5 == 0) {
+                    System.out.println("FizzBuzz");
+                } else {
+                    System.out.println("Fizz");
+                }
+            } else if (i%5 == 0) {
+                if (i%3 == 0) {
+                    System.out.println("FizzBuzz");
+                } else {
+                    System.out.println("Buzz");
+                }
+            } else {
+                System.out.println(i);
+            }
+        }
 
     }
 }
