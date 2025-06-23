@@ -1,6 +1,6 @@
-package Java_Task_Programs;
+package String_Programs;
 
-public class ReverseStringThree {
+public class ReverseStringOnPoint {
     public static void main(String[] args) {
 
         String reverseString = "Kshitij is the Best"; // Reversing the string with words in same position

@@ -22,7 +22,7 @@ public class reverseStringOne {
 //        }
 
 
-//        // 2. BY USING FOR EACH LOOP
+//        // 2. BY USING FOR LOOP
 //        for (int i = reverseStringArr.length-1; i >= 0 ; i--) {
 //            System.out.print(reverseStringArr[i]);
 //        }

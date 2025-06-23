@@ -18,7 +18,7 @@ public class StringWordCounter {
                 count++;
             }else  {
                 num++;
-            }
+            }      
         }
 
         System.out.println(count);
