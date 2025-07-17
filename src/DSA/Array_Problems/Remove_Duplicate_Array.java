@@ -7,19 +7,20 @@ import java.util.Set;
 
 public class Remove_Duplicate_Array {
     public static void main(String[] args) {
-        int[] arr = {1,2,3,1,2,3,3};
+        int[] arr = {1, 2, 3, 1, 2, 3, 3};
 
         hashSetMethod(arr);
         linkedHashSetMethod(arr);
         byBruteForceMethod(arr);
+        inPlaceSortAndReplace(arr);
         inPlaceSortAndCompare(arr);
 
     }
 
-    public static void hashSetMethod(int[] arr){
+    public static void hashSetMethod(int[] arr) {
 
         Set<Integer> uniqueArrayElements = new HashSet<>();
-        for (int element : arr){
+        for (int element : arr) {
             uniqueArrayElements.add(element);
         }
         System.out.println(uniqueArrayElements);
@@ -51,7 +52,7 @@ public class Remove_Duplicate_Array {
         // Same logic just insertion order preserved
     }
 
-    public static void byBruteForceMethod(int[] arr){  // Brute force + Sort
+    public static void byBruteForceMethod(int[] arr) {  // Brute force + Sort
 
         Arrays.sort(arr);  // Sorted array first
 
@@ -80,13 +81,13 @@ public class Remove_Duplicate_Array {
 
     }
 
-    public static void inPlaceSortAndCompare(int[] arr){            // Sort and Compare
+    public static void inPlaceSortAndReplace(int[] arr) {            // Sort and Compare
 
         Arrays.sort(arr);
 
         int i = 0;
-        for (int j = i+1; j < arr.length; j++) {
-            if (arr[i] != arr[j]){
+        for (int j = i + 1; j < arr.length; j++) {
+            if (arr[i] != arr[j]) {
                 i++;
                 arr[i] = arr[j];
             }
@@ -96,8 +97,45 @@ public class Remove_Duplicate_Array {
             System.out.print(arr[k]);
         }
 
+/*
+       Sort + 2 pointer = in-place duplicate removal
 
+        / Sort karo array ko Taaki duplicates side-by-side aa jaayein
+        / 2 pointer use karo:
+                 i → unique elements ko store karne ka kaam karega
+                 j → array traverse karega
+        / Compare: Agar arr[i] != arr[j]
+          ➔ i++ karo ➔ arr[i] = arr[j] (unique element ko aage le jao)
+        / 0 se i tak ka array unique elements ka ban jaata hai
+          ➔ Print ya return karo.
+
+
+        Time: O(n log n) (due to sorting)
+        Space: O(1) (array me hi kaam ho raha hai)
+
+
+ */
     }
+
+    public static void inPlaceSortAndCompare(int[] arr){
+
+        Arrays.sort(arr);  // Step 1: Sort the array
+
+        for(int i = 0; i < arr.length - 1; i++) {
+            if(arr[i] == arr[i + 1]) {
+                continue;  // skip duplicates
+            }
+            System.out.print(arr[i]);  // print if not equal to next
+        }
+
+        System.out.print(arr[arr.length - 1]);  // print last element manually
+
+        /*
+          - Time Complexity: O(n log n) (due to sorting)
+          - Space Complexity: O(1) (in-place)
+        */
+    }
+
 
 
 }
