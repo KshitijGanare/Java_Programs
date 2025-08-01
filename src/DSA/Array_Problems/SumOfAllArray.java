@@ -13,7 +13,7 @@ public class SumOfAllArray {
     public static void sumOfAllArray(int[] arr){
         int sum = 0;
         for (int add: arr){
-            sum = sum+add;
+            sum += add;
         }
         System.out.println(sum);
     }
