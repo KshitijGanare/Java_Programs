@@ -6,7 +6,7 @@ public class reverseIntegerThree {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
-        System.out.println("Enter an Integer to print reverse: ");
+        System.out.println("Enter an Integer to print reverseByFunction: ");
         int number = scan.nextInt();
 
         // Converting Integer to String

@@ -25,7 +25,7 @@ public class Reverse_Arraylist {
     }
 
     public void reverseManual(){
-        LinkedList<Integer> list = new LinkedList<>(Arrays.asList(10,20,30,40,50));
+        LinkedList<Integer> list = new LinkedList<>(Arrays.asList(10,20,30,40,50,60));
 
         int size = list.size();
 

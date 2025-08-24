@@ -12,8 +12,8 @@ public class Remove_Duplicate_Array {
         hashSetMethod(arr);
         linkedHashSetMethod(arr);
         byBruteForceMethod(arr);
-        inPlaceSortAndReplace(arr);
-        inPlaceSortAndCompare(arr);
+        inPlaceSortAndReplace2Pointer(arr);
+        inPlaceSortAndCompare1Pointer(arr);
 
     }
 
@@ -54,12 +54,12 @@ public class Remove_Duplicate_Array {
 
     public static void byBruteForceMethod(int[] arr) {  // Brute force + Sort
 
-        Arrays.sort(arr);  // Sorted array first
+//        Arrays.sort(arr);  // Sorted array first
 
         for (int i = 0; i < arr.length; i++) {
             boolean appeared = false; // appeared variable banaya — default false hai Yeh flag batayega ki arr[i] pehle aaya hai ya nahi
             for (int j = 0; j < i; j++) {
-                if (arr[i] == arr[j]) {
+                if (arr[i] == arr[j]){
                     appeared = true;
                     break;
                 }
@@ -81,7 +81,7 @@ public class Remove_Duplicate_Array {
 
     }
 
-    public static void inPlaceSortAndReplace(int[] arr) {            // Sort and Compare
+    public static void inPlaceSortAndReplace2Pointer(int[] arr) {            // Sort and Compare
 
         Arrays.sort(arr);
 
@@ -117,7 +117,7 @@ public class Remove_Duplicate_Array {
  */
     }
 
-    public static void inPlaceSortAndCompare(int[] arr){
+    public static void inPlaceSortAndCompare1Pointer(int[] arr){
 
         Arrays.sort(arr);  // Step 1: Sort the array
 

@@ -8,8 +8,8 @@ public class Count_Occurences_Array {
     public static void main(String[] args) {
         char[] arr = {'a', 'b', 'c', 'a', 'b', 'c', 'a', 'b', 'c'};
         byHashmap(arr);
-        byBruteForce2Pointer(arr);
-        bySinglePointer(arr);
+        sortAndCompareBruteForce2Pointer(arr);
+        sortAndCompare_SinglePointer(arr);
 
     }
 
@@ -25,16 +25,35 @@ public class Count_Occurences_Array {
         }
 
         /*
-          / Map.Entry<K,V> : Yeh nested interface hai jo key-value pair ko object ki tarah treat karta hai
-          - It is like a data type jisme key-value pair ka objectstore kar sakte hai
+                     /////        Map Functions        /////
 
-          / mapobject.entrySet() : saare key-value pairs ko ek Set of Entry objects me convert karta hai,
-          jisse tum loop lagakar traverse kar sakte ho.
+         map.put( key , value );
+         map.get(key);  // return value of the key
 
+         map.getOrDefault(key, default value);
+         yeh check karega key ki value, agar key ki koi value nahi hai toh default value return karega joki hai 0
+
+         Map.Entry<K,V>
+         - nested interface
+         - isme aisi functionality hai jisse isme key-value pair ek saath store kar sakte as object
+
+         map.entrySet()
+         - key-value ko ek object me convert karta hai
+
+         entry.getKey(); // will return only key
+         entry.getValue(); // will return only value
+
+
+         NOTE:
+         // Map ya kisi bhi collection me generics dena important hai
+
+         Map.Entry<> entry ke baad <> lagega
+         Array ko sort karo starting me
          */
+
     }
 
-    public static void byBruteForce2Pointer(char[] arr) {
+    public static void sortAndCompareBruteForce2Pointer(char[] arr) {
         /*
         Logic:
         1. Sort the array --> 2. match i and j characters
@@ -63,8 +82,7 @@ public class Count_Occurences_Array {
 
     }
 
-
-    public static void bySinglePointer(char[] arr) {
+    public static void sortAndCompare_SinglePointer(char[] arr) {
 
         int count = 1;
         Arrays.sort(arr);
@@ -76,7 +94,7 @@ public class Count_Occurences_Array {
             }
 
             if (arr[i] != arr[i - 1]) {
-                System.out.println(arr[i-1] + "=" + count);
+                System.out.println(arr[i - 1] + "=" + count);
                 count = 1;
             }
 

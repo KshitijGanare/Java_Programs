@@ -1,4 +1,4 @@
-package String_Programs;
+package DSA.String_Programs;
 
 
 import java.util.Scanner;
@@ -6,12 +6,12 @@ import java.util.Scanner;
 public class PalindromeNumber {
     public static void main(String[] args) {
 
-         // 1st Method: By comparing normal and reverse directly
+         // 1st Method: By comparing normal and reverseByFunction directly
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter String to check palindrome: ");
 //
         String normalString = scan.nextLine();
-//        String reverseString = new StringBuffer(normalString).reverse().toString();
+//        String reverseString = new StringBuffer(normalString).reverseByFunction().byBruteForce();
 //
 //        if (normalString.equalsIgnoreCase(reverseString)){
 //            System.out.println("It's a Palindrome");

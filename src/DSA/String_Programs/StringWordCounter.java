@@ -1,4 +1,4 @@
-package String_Programs;
+package DSA.String_Programs;
 
 public class StringWordCounter {
     public static void main(String[] args) {

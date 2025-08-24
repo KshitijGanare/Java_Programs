@@ -1,4 +1,4 @@
-package String_Programs;
+package DSA.String_Programs;
 
 import java.util.Scanner;
 
