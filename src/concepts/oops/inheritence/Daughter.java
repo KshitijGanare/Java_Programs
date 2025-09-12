@@ -1,15 +1,23 @@
 package concepts.oops.inheritence;
 
-public class Daughter {
+public class Daughter extends Son{
 
-    long money = 50000;
+    long daugherMoney = 50000;
 
-    public void flat(){
-        System.out.println("No Flat");
+    public void daughterFlat(){
+        System.out.println("Daughter Flat");
+        sonFlat();
+
     }
 
-    public void scooter(){
+    public void daughterScooter(){
         System.out.println("Activa");
+
+    }
+
+    public static void main(String[] args) {
+        Daughter daughter = new Daughter();
+        daughter.daughterFlat();
     }
 
 }
