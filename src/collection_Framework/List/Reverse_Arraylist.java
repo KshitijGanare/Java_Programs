@@ -1,4 +1,4 @@
-package List;
+package collection_Framework.List;
 
 import java.util.*;
 
@@ -36,7 +36,7 @@ public class Reverse_Arraylist {
 
         }
 
-        System.out.println("Reversed List: " + list);
+        System.out.println("Reversed collection_Framework.List: " + list);
     }
 
 }

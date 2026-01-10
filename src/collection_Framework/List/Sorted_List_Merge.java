@@ -1,4 +1,4 @@
-package List;
+package collection_Framework.List;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,12 +11,12 @@ public class Sorted_List_Merge {
         List<Integer> list2 = new ArrayList<>(Arrays.asList(3,4,6,8,9));
 
 
-//        List<Integer> mergedList = mergedList(list1,list2);
+//        collection_Framework.List<Integer> mergedList = mergedList(list1,list2);
 //        System.out.println(mergedList);
     }
 //
-//    public static List<Integer> mergedList(List<Integer> list1, List<Integer> list2){
-//         List<Integer>
+//    public static collection_Framework.List<Integer> mergedList(collection_Framework.List<Integer> list1, collection_Framework.List<Integer> list2){
+//         collection_Framework.List<Integer>
 //
 //    }
 }
