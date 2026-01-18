@@ -6,8 +6,8 @@ import java.util.Map;
 public class StringWordCounter {
     public static void main(String[] args) {
 
-//       byMap("automation");
-         byASCIIArray("automation");
+        byMap("automation");
+        byASCIIArray("automation");
 
     }
 
@@ -35,19 +35,21 @@ public class StringWordCounter {
 
     }
 
+
+
     public static void byASCIIArray(String word){
 
         int[] arr = new int[256];
 
         for (int i = 0; i < word.length(); i++) {
-            arr[word.charAt(i)]++;
+            arr[word.charAt(i)]++;       // char --> integer automatic conversion by java
 
         }
 
         for (int i = 0; i < 256; i++) {
 
             if (arr[i] >= 1) {
-                System.out.println((char)(i) + " --> " + arr[i]);
+                System.out.println((char)(i) + " --> " + arr[i]);  // int --> char explicit conversion
 
             }
 
@@ -57,7 +59,12 @@ public class StringWordCounter {
 
 }
 
+
+
+
+
 /*
+
 // Map
 
 -----> Gaps
@@ -103,12 +110,12 @@ public class StringWordCounter {
      // char and int are compatible types
      use explicit casting (int) to get ASCII value and (char) to convert number back to character
 
-| Expression | Result |
-| ---------- | ------ |
-| (int) 'A'  |  65    |
-| (char) 66  |   B    |
-| '0'        |  48    |
-| (int) '9'  |  57    |
+   | Expression | Result |
+   | ---------- | ------ |
+   | (int) 'A'  |  65    |
+   | (char) 66  |   B    |
+   | '0'        |  48    |
+   | (int) '9'  |  57    |
 
 
 

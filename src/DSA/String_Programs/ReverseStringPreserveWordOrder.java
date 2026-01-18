@@ -1,13 +1,13 @@
 package DSA.String_Programs;
 
-public class ReverseStringOnPoint {
+public class ReverseStringPreserveWordOrder {
     public static void main(String[] args) {
-
+    // Reverse characters of each word while keeping word positions intact
         reverseStringCharacters();
     }
 
     public static void reverseStringCharacters() {
-        String sentence = "Kshitij is the Best";
+        String sentence = "Kshitij    is the Best";
         String[] words = sentence.split(" ");
 
         for (int i = 0; i < words.length; i++) {
