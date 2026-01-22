@@ -3,7 +3,7 @@ package DSA.String_Programs;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class DuplicateWordsCheck {
+public class DuplicateWordsCountCheck {
     public static void main(String[] args) {
 
         duplicateWordCheckByMap("automation");
