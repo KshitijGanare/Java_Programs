@@ -5,41 +5,75 @@ import java.util.Set;
 
 public class RemoveDuplicateFromString {
     public static void main(String[] args) {
+
         String str = "banana";
+
         byBruteForce(str);
-        byFunction(str);
+        System.out.println();
+        bySet(str);
+        System.out.println();
+        byAscii(str);
 
     }
 
-    public static void byBruteForce(String str) {
-        int n = str.length();
 
-        for (int i = 0; i < n; i++) {
-            boolean hasAppeared = false;
+    public static void byBruteForce(String word) {
+        boolean isUnique;
+
+        for (int i = 0; i < word.length(); i++) {
+
+            isUnique = true;
+
             for (int j = 0; j < i; j++) {
-                if (str.charAt(i) == str.charAt(j)){
-                    hasAppeared = true;
+
+                if (word.charAt(i) == word.charAt(j)){
+                    isUnique = false;
                     break;
                 }
+
             }
-            if(!hasAppeared){
-                System.out.print(str.charAt(i));
+
+            if(isUnique){
+                System.out.print(word.charAt(i));
             }
+
         }
 
     }
 
-    public static void byFunction(String str){
-        Set<Character> set = new LinkedHashSet();
-        StringBuilder stringbuilder = new StringBuilder();
 
-        for (char ch: str.toCharArray()){
-            if(set.add(ch)){
-                stringbuilder.append(ch);
-            }
+    public static void bySet(String str) {
+        Set<Character> set = new LinkedHashSet<>();
+
+        for (int i = 0; i < str.length(); i++) {
+            set.add(str.charAt(i));
         }
 
         System.out.println(set);
-        System.out.println(stringbuilder);
+
     }
+
+    public static void byAscii(String str){
+
+        int[] freq = new int[256];
+
+        for (int i = 0; i < str.length(); i++) {
+            freq[str.charAt(i)]++;
+
+        }
+
+
+        for (int i = 0; i < str.length(); i++) {
+
+            if (freq[str.charAt(i)] > 0){
+                System.out.print(str.charAt(i));
+                freq[str.charAt(i)] = 0;
+            }
+
+        }
+
+
+    }
+
+
 }
