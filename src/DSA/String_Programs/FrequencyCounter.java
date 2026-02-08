@@ -3,7 +3,7 @@ package DSA.String_Programs;
 import java.util.HashMap;
 import java.util.Map;
 
-public class StringWordCounter {
+public class FrequencyCounter {
     public static void main(String[] args) {
 
         occurenceByBruteForce("automation");
