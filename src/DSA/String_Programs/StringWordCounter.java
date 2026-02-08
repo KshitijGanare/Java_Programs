@@ -6,8 +6,40 @@ import java.util.Map;
 public class StringWordCounter {
     public static void main(String[] args) {
 
+        occurenceByBruteForce("automation");
         byMap("automation");
         byASCIIArray("automation");
+
+    }
+
+
+    public static void occurenceByBruteForce(String str){
+        int count;
+        boolean hasAppeared;
+
+        for (int i=0; i<str.length(); i++){
+            count = 1;
+            hasAppeared = false;
+
+            for (int k = 0; k < i; k++) {
+                if (str.charAt(i) == str.charAt(k)){
+                    hasAppeared = true;
+                    break;
+                }
+
+            }
+
+            if(!hasAppeared) {
+                for (int j = i+1; j < str.length(); j++) {
+                    if (str.charAt(i) == str.charAt(j)) {
+                        count++;
+                    }
+                }
+
+                System.out.println(str.charAt(i) + "->" + count);
+            }
+
+        }
 
     }
 
@@ -63,65 +95,6 @@ public class StringWordCounter {
 
 
 
-/*
-
-// Map
-
------> Gaps
-   - null + 1 = null
-   - map.get(ch) --> returns value of key, if key not found gives NPE
-   - first will have to check if map contains key contains or not
-     If map contains key, then add 1 in current value
-     If not, then add 1 to the key
-
-
-
-// ASCII Array Approach
-- Characters are stored as ASCII values, so I use them directly as array indexes to count frequency.”
-
------> Gaps:
-   1. Mistake: freq[word.charAt(i)]++; Dont have Understanding
-      Fix:
-     // char  →  internally an integer (ASCII / Unicode value)
-
-     // Java automatically converts 'a' to its ASCII value:
-       freq['a']++
-       freq[97]++
-
-     // How Java conversion happens
-     - In java every char is integer internally
-     - Java decides on basis of context to convert integer to char or integer
-
-       / Example:
-        ->  freq['a']++;       // Array index can only be number, so character changed to integer
-        ->  sout('a');         // Prints character
-        ->  sout('a' + 1);     // 98
-
-
-
-   2. Mistake: Run loop on String rather than freq
-      Fix: Run loop for printing on freq not String
-           Use type casting to print int to char
-
-
-
-
-   3. Type Casting
-     // char and int are compatible types
-     use explicit casting (int) to get ASCII value and (char) to convert number back to character
-
-   | Expression | Result |
-   | ---------- | ------ |
-   | (int) 'A'  |  65    |
-   | (char) 66  |   B    |
-   | '0'        |  48    |
-   | (int) '9'  |  57    |
-
-
-
-
-
-*/
 
 
 
