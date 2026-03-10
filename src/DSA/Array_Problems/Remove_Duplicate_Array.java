@@ -9,7 +9,6 @@ public class Remove_Duplicate_Array {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 1, 2, 3, 3};
 
-        hashSetMethod(arr);
         linkedHashSetMethod(arr);
         byBruteForceMethod(arr);
         inPlaceSortAndReplace2Pointer(arr);
@@ -17,47 +16,32 @@ public class Remove_Duplicate_Array {
 
     }
 
-    public static void hashSetMethod(int[] arr) {
-
-        Set<Integer> uniqueArrayElements = new HashSet<>();
-        for (int element : arr) {
-            uniqueArrayElements.add(element);
-        }
-        System.out.println(uniqueArrayElements);
-
-        /*
-         Logic:
-         1. Hashset me unique elements hi store hote hai
-         2. Store all elements using for loop, only unique will get stored
-         3. Print hashset variable at the end
-
-         Pros:
-         1. No change in order of original array
-         Complexity  Time = O(n) Space = O(n)
-
-         Cons:
-         - Insertion order not remain in hashset
-
-         */
-    }
 
     public static void linkedHashSetMethod(int[] arr) {
 
         Set<Integer> uniqueArrayElements = new LinkedHashSet<>();
+
         for (int element : arr) {
             uniqueArrayElements.add(element);
         }
+
         System.out.println(uniqueArrayElements);
+
+        /* Pros:
+           1. No change in order of original array
+           Complexity  Time = O(n) Space = O(n)
+        */
 
         // Same logic just insertion order preserved
     }
+
 
     public static void byBruteForceMethod(int[] arr) {  // Brute force + Sort
 
 //        Arrays.sort(arr);  // Sorted array first
 
         for (int i = 0; i < arr.length; i++) {
-            boolean appeared = false; // appeared variable banaya — default false hai Yeh flag batayega ki arr[i] pehle aaya hai ya nahi
+            boolean appeared = false;
             for (int j = 0; j < i; j++) {
                 if (arr[i] == arr[j]){
                     appeared = true;
@@ -112,7 +96,6 @@ public class Remove_Duplicate_Array {
 
         Time: O(n log n) (due to sorting)
         Space: O(1) (array me hi kaam ho raha hai)
-
 
  */
     }
