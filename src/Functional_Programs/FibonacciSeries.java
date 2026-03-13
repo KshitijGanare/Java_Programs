@@ -5,6 +5,8 @@ public class FibonacciSeries {
     public static void main(String[] args){
 
         fSeriesByPointer(10);
+        System.out.println("\n\n");
+        fibonacciSwap(10);
 
     }
 
@@ -25,6 +27,22 @@ public class FibonacciSeries {
 
         }
 
+    }
+
+
+    public static void fibonacciSwap(int n){
+
+        int a = 0;
+        int b = 1;
+
+        for(int i = 0; i < n; i++){
+
+            System.out.print(a + " ");
+
+            b = a + b;
+            a = b - a;
+
+        }
     }
 
 }
